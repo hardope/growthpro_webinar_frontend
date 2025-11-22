@@ -1,6 +1,6 @@
 class Messenger {
     constructor () {
-        this.apiBaseUrl = "http://localhost:3000/api";
+        this.apiBaseUrl = "https://growthpro-whisper-backend.onrender.com/api";
         this.currentUser = null; // { id, username }
         this.messages = [];
         this.mode = 'signup'; // 'signup' | 'inbox' | 'send'
