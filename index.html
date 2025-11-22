@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whisper - Anonymous Messenger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤫 Whisper</h1>
+            <p id="appTagline">Receive anonymous messages from anyone</p>
+        </header>
+
+        <!-- Signup View -->
+        <div class="card" id="signupCard">
+            <h2>Create Your Message Box</h2>
+            <p>Choose a username and share your unique link with friends</p>
+            <form id="signupForm">
+                <div class="input-group">
+                    <input id="signupUsername" type="text" placeholder="Choose your username..." autocomplete="off" required />
+                </div>
+                <button class="btn btn-primary" type="submit" id="signupBtn">Create Your Link ✨</button>
+            </form>
+            <div class="status" id="signupStatus"></div>
+        </div>
+
+        <div class="divider" id="dividerInbox">or view your inbox</div>
+
+        <!-- Dashboard / Inbox View -->
+        <div class="card hidden" id="dashboardCard">
+            <div class="user-badge" id="userBadge">
+                <span>👤</span>
+                <span id="badgeUsername"></span>
+            </div>
+            <div class="link-section" id="shareLinkSection">
+                <h3>📎 Your Shareable Link</h3>
+                <div class="link-input-wrapper">
+                    <input type="text" id="shareLinkInput" disabled />
+                    <button class="btn btn-primary" id="copyLinkBtn" type="button">Copy</button>
+                </div>
+                <div class="status" id="copyStatus"></div>
+            </div>
+            <div class="messages-header">
+                <h3>📬 Your Messages</h3>
+                <span class="message-count" id="messageCount">0</span>
+            </div>
+            <div id="messagesList" class="messages-list"></div>
+            <div class="empty-state hidden" id="emptyState">
+                <p>No messages yet. Share your link to start receiving anonymous messages!</p>
+            </div>
+            <div class="actions" style="margin-top:20px; display:flex; gap:10px;">
+                <button class="btn btn-secondary" id="refreshBtn" type="button">Refresh 🔄</button>
+                <button class="btn btn-secondary" id="logoutBtn" type="button">Logout 🚪</button>
+            </div>
+        </div>
+
+        <!-- Anonymous Send View -->
+        <div class="card hidden" id="sendCard">
+            <h2>Send Anonymous Message</h2>
+            <p id="sendRecipientLabel">Send a secret message</p>
+            <form id="sendForm">
+                <div class="input-group">
+                    <textarea id="sendMessageInput" rows="5" placeholder="Type your anonymous message..." required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit" id="sendMsgBtn">Send Message 🚀</button>
+            </form>
+            <div class="status" id="sendStatus"></div>
+            <div style="margin-top:15px; text-align:center;">
+                <a href="./" style="color:#667eea; font-size:0.85rem; text-decoration:none;">Create your own inbox</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
